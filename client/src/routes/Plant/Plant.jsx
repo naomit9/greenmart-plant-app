@@ -7,6 +7,8 @@ function Plant() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState("")
+  const [search, setSearch] = useState("")
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,6 +18,9 @@ function Plant() {
         if(selectedCategory) {
           url += `?category=${selectedCategory}`
         }
+        if(search) {
+          url +=  `?search=${search}`
+      }
 
         const response = await fetch(url)
         if (!response.ok) {
@@ -33,7 +38,7 @@ function Plant() {
       }
     }
     fetchData();
-  }, [selectedCategory])
+  }, [selectedCategory, search])
 
   return (
     <div>
@@ -41,6 +46,14 @@ function Plant() {
       <h2>Always Believe Good Things Happen with Plants.</h2>
       {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <Link to='/createplant'>+ Add New Plant</Link>
+
+      <div className='search'>
+        <label>Search Plants</label>
+        <input 
+          className='search-input'
+          onChange={(event) => setSearch(event.target.value)}
+        />
+      </div>
 
       <div className='filters'>
         <label>Categories</label>
@@ -57,7 +70,9 @@ function Plant() {
 
       {isLoading ? (<p>Loading...</p>) : error ? (<p>{error}</p>) : (
         <ul className='plants'>
-          {data.map((item) => (
+          {data.filter((item) => {
+                return search.toLowerCase() === '' ? item: item.name.toLowerCase().includes(search)
+          }).map((item) => (
             <li key={item._id}>
               <Link to={`/plants/${item.slug}`}>
                 <img src={`http://localhost:3000/uploads/${item.thumbnail}`} alt={item.name} />
