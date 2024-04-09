@@ -18,3 +18,12 @@ A full-stack MERN project with a simple CRUD operation for a plant application.
 ## To-do:
 * Form validation
 * Register and log in/out
+
+
+![Preview](./client/src/assets/screenshot-plants.png)
+
+
+![Preview](./client/src/assets/screenshot-singleplant.png)
+
+
+![Preview](./client/src/assets/screenshot-editplant.png)
