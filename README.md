@@ -16,6 +16,5 @@ A full-stack MERN project with a simple CRUD operation for a plant application.
 * Store data on MongoDB
 
 ## To-do:
-* Style the Homepage and the About page
 * Form validation
 * Register and log in/out

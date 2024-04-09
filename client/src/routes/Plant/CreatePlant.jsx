@@ -150,7 +150,7 @@ function CreatePlant() {
                                 </select>
                             </div>
         
-                            <input type='submit'/>
+                            <input type='submit' />
                         </div>
                     </form>
         )} 

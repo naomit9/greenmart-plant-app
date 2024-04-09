@@ -9,7 +9,6 @@ function Plant() {
   const [selectedCategory, setSelectedCategory] = useState("")
   const [search, setSearch] = useState("")
 
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -30,6 +29,8 @@ function Plant() {
         const jsonData = await response.json();
         setData(jsonData);
         setIsLoading(false);
+
+        const sort = jsonData.sort((a,b) => a.name.localeCompare(b.name))
 
       } catch (error) {
         console.log(error)
