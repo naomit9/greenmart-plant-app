@@ -45,8 +45,11 @@ function CreatePlant() {
         }
     }
 
-    const handleCategoryChange = (event) => {
+    /* const handleCategoryChange = (event) => {
         setCategories(event.target.value.split(',').map((c) => c.trim()))
+    } */
+    const handleCategoryChange = (event) => {
+        setCategories(event.target.value)
     }
 
     const onImageChange = (event) => {
@@ -59,9 +62,12 @@ function CreatePlant() {
 
   return (
     <div>
-        <h1>Create Plant</h1>
-        <h2>subheading for this page</h2>
-        <p>to add a paragraph</p>
+        <h1>Add a New Plant</h1>
+        <p>
+            You can add your favorite plant here, along with the level of water, sunlight and humidity needed for the plant. 
+            Don't forget to add a small description and a nice photo of the plant!
+            As soon as you hit submit, this information will be saved in the Plants collection on MongoDB on the backend and show on the 'Plants' page on the frontend.
+        </p>
 
         {submitted ? (
             <p>Data submitted successfully!</p>
@@ -123,14 +129,25 @@ function CreatePlant() {
                                     value={description} 
                                     onChange={(event) => setDescription(event.target.value)} />
                             </div>
-                            <div>
-                                {/* <h3>Categories</h3> */}
+                            {/* <div>
                                 <label>Categories (comma-separated)</label>
                                 <input 
                                     type='text' 
                                     value={categories}
                                     onChange={handleCategoryChange} 
                                 />
+                            </div> */}
+                            <div className='filters'>
+                                <label>Categories</label>
+                                <select onChange={handleCategoryChange}>
+                                    <option value=''>All</option>
+                                    <option value='lowlight'>Low Light Plants</option>
+                                    <option value='airpurifying'>Air Purifying Plants</option>
+                                    <option value='easycare'>Easy Care Beginner PLants</option>
+                                    <option value='petfriendly'>Pet Friendly Plants</option>
+                                    <option value='hangingplant'>Hanging Plants</option>
+                                    <option value='outdoorplant'>Outdoor Plants</option>
+                                </select>
                             </div>
         
                             <input type='submit'/>

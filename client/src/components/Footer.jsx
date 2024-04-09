@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 function Footer() {
   return (
     <footer>
-        &copy; CopyRight { new Date().getFullYear() }
+        &copy; CopyRight GreenMart { new Date().getFullYear() }
     </footer>
   )
 }

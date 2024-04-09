@@ -105,11 +105,14 @@ footer {
   font-size: 0.8rem;
 }
 
-.logo img{
+.logo {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  height: 70px;
+}
+
+.logo img {
+  width: 50px;
 }
 
 /* plants */

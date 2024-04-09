@@ -42,8 +42,11 @@ function Plant() {
 
   return (
     <div>
-      <h1>Plants</h1>
-      <h2>Always Believe Good Things Happen with Plants.</h2>
+      <h1>Plant Dashboard</h1>
+      <p>This is a dashboard where you can add new plants, edit and delete existing plants. 
+        Here, you can search for the name of the plant you want and filter them by the following categories: 
+        Low Light, Pet Friendly, Easy Care for Beginners, Air Purifying, Hanging Plants and Outdoor Plants.
+      </p>
       {/* <pre>{JSON.stringify(data, null, 2)}</pre> */}
       <Link to='/createplant'>+ Add New Plant</Link>
 
