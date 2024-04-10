@@ -88,6 +88,8 @@ function CreatePlant() {
                                 <h3>Plant Details</h3>
                                 <label>Plant Name</label>
                                 <input 
+                                    placeholder='Snake Plant'
+                                    required
                                     type='text' 
                                     value={name} 
                                     onChange={(event) => setName(event.target.value)} />
@@ -95,34 +97,42 @@ function CreatePlant() {
                             <div>
                                 <label>Slug</label>
                                 <input 
+                                    placeholder='snake-plant'
+                                    required
                                     type='text' 
                                     value={slug} 
                                     onChange={(event) => setSlug(event.target.value)} />
                             </div>
                             <div>
                                 <h3>Care Level 🥰</h3>
+                                <p>This section shows how much water, sunlight and humidity are needed to maintain this plant. </p>
+                                <p>1 = Not at all, 2 = Low, 3 = Medium, 4 = Moderate-Medium, 5 = High</p>
                                 <label>Water Level</label>
                                 <input 
+                                    required
                                     type='text' 
                                     value={waterLevel} 
                                     onChange={(event) => setWaterLevel(event.target.value)} 
                                 />
                                 <label>Sun Level</label>
                                 <input 
+                                    required
                                     type='text' 
                                     value={sunLevel} 
                                     onChange={(event) => setSunLevel(event.target.value)} 
                                 />
                                 <label>Humidity Level</label>
                                 <input 
+                                    required
                                     type='text' 
                                     value={humidityLevel} 
                                     onChange={(event) => setHumidityLevel(event.target.value)} 
                                 />
                             </div>
                             <div>
-                                <label>Description</label>
+                                <h3>Description</h3>
                                 <textarea 
+                                    placeholder='Write a short paragraph about the plant'
                                     rows='4'
                                     cols='50'
                                     type='text' 
@@ -137,8 +147,9 @@ function CreatePlant() {
                                     onChange={handleCategoryChange} 
                                 />
                             </div> */}
+                            <h3>Categories</h3>
+                            <p>Choose a category your plant belongs to</p>
                             <div className='filters'>
-                                <label>Categories</label>
                                 <select onChange={handleCategoryChange}>
                                     <option value=''>All</option>
                                     <option value='lowlight'>Low Light Plants</option>
