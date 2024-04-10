@@ -11,13 +11,11 @@ A full-stack MERN project with a simple CRUD operation for a plant application.
 * Create new plant
 * Update existing plant
 * Delete a plant
+* Search for a search
+* Sort plant names alphabetically
 * Filter plant according to categories
 * Upload thumbnail image
 * Store data on MongoDB
-
-## To-do:
-* Form validation
-* Register and log in/out
 
 
 ![Preview](./client/src/assets/screenshot-plants.png)
