@@ -16,7 +16,7 @@ app.use(cors(
 ));
 app.use(express.urlencoded( { extended: true } ))
 app.use(express.json());
-app.use("/uploads", express.static("uploads"))
+app.use(express.static("uploads"))
 
 app.get("/api/plants", async (req, res) => {
     try {
