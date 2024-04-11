@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, json } from 'react-router-dom'
 
 function Plant() {
-  const baseUrl = 'http://localhost:3000/api/plants';
+  const baseUrl = 'https://greenmart-server-gamma.vercel.app/api/plants';
   const [data, setData] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
