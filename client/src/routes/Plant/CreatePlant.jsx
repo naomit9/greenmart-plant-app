@@ -29,7 +29,7 @@ function CreatePlant() {
 
         try {
             const response = await fetch("https://greenmart-server-gamma.vercel.app/api/plants", {
-                method: "POST",
+                method: "PUT",
                 body: formData,
             })
 
