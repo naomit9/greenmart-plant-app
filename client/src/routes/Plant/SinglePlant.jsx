@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 function SinglePlant() {
     const [data, setData] = useState([])
     const urlSlug = useParams()
-    const baseUrl = `http://localhost:3000/api/plants/${urlSlug.slug}`;
+    const baseUrl = `https://greenmart-server-gamma.vercel.app/api/plants/${urlSlug.slug}`;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -65,7 +65,7 @@ function SinglePlant() {
 
             <div className='plantdetails'>
                 <div className='col-1'>
-                    <img src={`http://localhost:3000/uploads/${data?.thumbnail}`} alt={data.name} />
+                    <img src={`https://greenmart-server-gamma.vercel.app/uploads/${data?.thumbnail}`} alt={data.name} />
                     <Link to={`/editplant/${data.slug}`}>Edit</Link>
                 </div>
                 <div className='col-2'>

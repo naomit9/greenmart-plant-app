@@ -79,7 +79,7 @@ function Plant() {
           }).map((item) => (
             <li key={item._id}>
               <Link to={`/plants/${item.slug}`}>
-                <img src={`http://localhost:3000/uploads/${item.thumbnail}`} alt={item.name} />
+                <img src={`https://greenmart-server-gamma.vercel.app/uploads/${item.thumbnail}`} alt={item.name} />
                 <h3>{item.name}</h3>
               </Link>
             </li>

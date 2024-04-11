@@ -5,7 +5,7 @@ import NoImageSelected from '../../assets/no-image-selected.jpg'
 function EditPlant() {
     const navigate = useNavigate()
     const urlSlug = useParams()
-    const baseUrl = `http://localhost:3000/api/plants/${urlSlug.slug}`
+    const baseUrl = `https://greenmart-server-gamma.vercel.app/api/plants/${urlSlug.slug}`
 
     const [plantID, setPlantID] = useState("");
     const [name, setName] = useState("");
@@ -65,7 +65,7 @@ function EditPlant() {
         }
 
         try {
-            const response = await fetch("http://localhost:3000/api/plants", {
+            const response = await fetch("https://greenmart-server-gamma.vercel.app/api/plants", {
                 method: "PUT",
                 body: formData,
             })
@@ -98,7 +98,7 @@ const removePlant = async (event) => {
 
     try {
         const response = await fetch(
-            `http://localhost:3000/api/plants/${plantID}`, 
+            `https://greenmart-server-gamma.vercel.app/api/plants/${plantID}`, 
             {
                 method: "DELETE"
             }
@@ -130,7 +130,7 @@ const removePlant = async (event) => {
                         {image ? (
                             <img src={`${image}`} alt='Preview image' />
                         ) : (
-                            <img src={`http://localhost:3000/uploads/${thumbnail}`} alt='Preview image' />
+                            <img src={`https://greenmart-server-gamma.vercel.app/uploads/${thumbnail}`} alt='Preview image' />
                         )}
                         <input
                             onChange={onImageChange}
