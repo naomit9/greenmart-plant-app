@@ -59,7 +59,7 @@ const storage = multer.diskStorage({
   
   const upload = multer({ storage: storage })
 
-app.put("/api/plants", upload.single("thumbnail") ,async (req, res) => {
+app.put("/api/plants/add", upload.single("thumbnail") ,async (req, res) => {
     try {
         console.log(req.body)
         console.log(req.file)

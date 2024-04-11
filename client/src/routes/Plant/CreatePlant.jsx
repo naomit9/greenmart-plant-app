@@ -28,7 +28,7 @@ function CreatePlant() {
         formData.append("sunLevel", sunLevel);
 
         try {
-            const response = await fetch("https://greenmart-server-gamma.vercel.app/api/plants", {
+            const response = await fetch("https://greenmart-server-gamma.vercel.app/api/plants/add", {
                 method: "PUT",
                 body: formData,
             })
